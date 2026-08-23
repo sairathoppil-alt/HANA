@@ -30,8 +30,7 @@ export const collegeYearTwo = {
   photos: [
     photo('/photos/c8.jpeg', 'look at us now ♡', 0, 'large'), photo('/photos/c9.jpeg', 'this one makes me laugh every time', -5),
     photo('/photos/c10.jpeg', 'another core memory', 4), photo('/photos/c11.jpeg', 'us being us', -3),
-    photo('/photos/c12.jpeg', 'how did this even happen 😭', 5), photo('/photos/c13.jpeg', 'one for the scrapbook', -4),
-    photo('/photos/c14.jpeg', "wouldn't trade this for anything", 3)
+   
   ],
   changes: ['new places', 'new people', 'new memories', 'same us ♡']
 }
