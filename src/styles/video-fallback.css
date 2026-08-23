@@ -1,0 +1,2 @@
+.video-surface video { display: none; }
+.video-surface video.is-loaded { display: block; }

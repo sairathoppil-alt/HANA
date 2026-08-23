@@ -1,0 +1,23 @@
+.cover-photo .photo-surface { min-height: 0; height: auto; }
+.cover-photo { transform: rotate(3deg); }
+.letter-edge-photos .letter-edge-photo { position: absolute; width: 115px; }
+.letter-edge-photos .letter-edge-photo:nth-child(1) { left: 1%; top: 22%; }
+.letter-edge-photos .letter-edge-photo:nth-child(2) { right: 1%; top: 31%; }
+.letter-edge-photos .letter-edge-photo:nth-child(3) { left: 2%; bottom: 22%; }
+.letter-edge-photos .letter-edge-photo:nth-child(4) { right: 2%; bottom: 13%; }
+.letter-edge-photos .letter-edge-photo .photo-surface { min-height: 0; height: auto; }
+.evidence-item .video-moment { width: 100%; padding: 8px 8px 11px; }
+.evidence-item .video-surface { min-height: 115px; }
+.evidence-item .video-surface video { min-height: 115px; max-height: 180px; }
+.evidence-item .video-placeholder { font-size: 21px; }
+.evidence-item .video-placeholder small { font-size: 12px; }
+.evidence-item .video-moment figcaption { font-size: 15px; }
+.evidence-item .video-moment .washi-tape { width: 58px; height: 16px; top: -8px; }
+.evidence-item > span, .evidence-item > em { display: block; margin-left: 5px; }
+.evidence-item > span { color: var(--rose); font: 16px Caveat, cursive; }
+.evidence-item > em { color: #86645d; font: 16px Caveat, cursive; }
+@media (max-width: 760px) {
+  .letter-edge-photos .letter-edge-photo { display: none; }
+  .evidence-item .video-surface { min-height: 105px; }
+  .evidence-item .video-surface video { min-height: 105px; }
+}
