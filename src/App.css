@@ -6,3 +6,605 @@
 .album-intro{display:grid;grid-template-columns:.85fr 1.25fr;gap:30px;align-items:center}.torn-note,.album-copy{padding:19px 25px}.torn-note{background:#f5d2d0;transform:rotate(-2deg)}.torn-note p{margin:8px 0;font:20px Caveat,cursive}.album-copy{background:transparent}.album-copy p{margin:6px 0;font:19px/1.15 Cormorant Garamond,serif}.album-copy p:first-of-type{color:var(--rose);font:25px Caveat,cursive}.photo-collage{position:relative;display:grid}.photo-placeholder{margin:0;padding:10px 10px 14px;width:100%;z-index:1}.photo-surface{min-height:120px}.photo-surface img{display:block;width:100%;height:100%;min-height:120px;object-fit:cover}.photo-square .photo-surface{aspect-ratio:1}.photo-landscape .photo-surface{aspect-ratio:1.45;min-height:90px}.photo-strip{width:88px;padding:7px}.photo-strip .photo-surface{min-height:225px;background:repeating-linear-gradient(#efc4c7 0 47px,#fffaf4 47px 51px)}.photo-strip figcaption{font-size:14px}.year-one-collage{grid-template-columns:repeat(6,1fr);gap:15px;margin:10px -20px 5px}.year-one-collage .photo-placeholder:nth-child(even){margin-top:28px}.year-one-collage .photo-placeholder .photo-surface{min-height:125px}.album-doodles{display:flex;justify-content:space-between;padding:0 8%;font-size:30px}.year-two-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:30px;align-items:center}.central-photo{width:280px;justify-self:center}.central-photo .photo-surface{min-height:260px}.central-photo figcaption{font-size:26px}.year-two-small-collage{grid-template-columns:repeat(2,1fr);gap:22px}.changes-note{position:absolute;right:7%;top:52%;padding:16px 21px;background:#f4d7cf;transform:rotate(3deg)}.changes-note p{margin:5px 0;font:20px Caveat,cursive}.sentimental-note{margin:25px 5% 0;padding:21px 32px}.sentimental-note p{margin:6px 0;font:19px/1.2 Cormorant Garamond,serif}.sentimental-note strong{display:block;margin-top:12px;text-align:center;color:var(--rose);font:30px Caveat,cursive}.camera-note{display:inline-block;padding:10px 19px;background:#f4ced0;font:23px Caveat,cursive;transform:rotate(-2deg)}.camera-note-top{margin-left:8%}.camera-collage{grid-template-columns:repeat(6,1fr);gap:18px 13px;min-height:560px;padding:8px 3%}.camera-collage .photo-placeholder{width:100%}.camera-collage .photo-surface{min-height:105px}.camera-note-bottom{margin-left:71%;transform:rotate(4deg)}.camera-arrows{position:absolute;right:8%;top:45%;color:var(--rose);font:24px Caveat,cursive}.letter-paper{max-width:700px;margin:auto;padding:37px 61px 45px;background:#fffdf5;background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(215,170,139,.22) 31px 32px);transform:rotate(.4deg)}.letter-paper:before{content:'';position:absolute;left:42px;top:0;bottom:0;border-left:1px solid rgba(217,143,155,.25)}.letter-greeting{font:25px Caveat,cursive}.letter-body{white-space:pre-line;font:18px/1.73 Cormorant Garamond,serif}.letter-signoff{white-space:pre-line;color:var(--rose);font:25px/1.05 Caveat,cursive}.letter-edge-photo{position:absolute;width:135px;left:2%;top:24%}.letter-bow{position:absolute;right:3%;top:31%;color:var(--rose);font:49px Cormorant Garamond,serif}.birthday-page{background:#fbe5df}.birthday-card{position:relative;max-width:660px;margin:auto;padding:33px 35px 39px;text-align:center;background:#f7c7c8;background-image:radial-gradient(rgba(167,102,96,.1) .7px,transparent .8px);background-size:6px 6px;box-shadow:5px 8px 0 rgba(126,63,71,.1),0 12px 18px rgba(105,43,50,.14);transform:rotate(-.7deg)}.birthday-sparkles{color:var(--rose);font:25px Caveat,cursive}.birthday-card h2{margin:10px 0 0;color:var(--rose);font:600 clamp(48px,8vw,78px)/.85 Caveat,cursive}.birthday-human,.birthday-line{font:28px Caveat,cursive}.birthday-photo{width:220px;margin:auto}.birthday-photo .photo-surface{min-height:180px}.birthday-messages{display:grid;gap:2px;font:21px/1.08 Caveat,cursive}.loading-line{margin:19px 0 24px;color:var(--rose);font:20px Caveat,cursive}.wish-reveal{display:grid;gap:5px;margin:23px auto 0}.wish-reveal strong{color:var(--rose);font:28px Caveat,cursive}.wish-reveal span{font:20px Caveat,cursive}.birthday-end{margin:27px auto 0;text-align:center;color:var(--rose);font:30px Caveat,cursive}.birthday-end small{display:block;color:#926d68;font-size:17px}.birthday-confetti i{position:absolute;top:45%;left:50%;color:var(--rose);font:27px Caveat,cursive;opacity:0;font-style:normal;pointer-events:none}
 @media(max-width:760px){.top-bar{padding:14px 18px;flex-wrap:wrap;justify-content:center;gap:12px}.brand{font-size:29px}.recipient{font-size:19px}.chapter-tabs{width:100%;justify-content:flex-start;overflow-x:auto}.paper-spread{padding:15px 12px 35px}.cover-paper{min-height:660px;padding:35px 20px 22px}.cover-scrap,.ribbon,.cover-scene>.doodle{display:none}.inside-page{padding:33px 18px 20px}.inside-heading>.doodle{display:none}.story-grid,.album-intro,.year-two-layout{grid-template-columns:1fr;gap:20px}.now-scrap{grid-column:auto}.timeline-copy span{font-size:20px}.year-one-collage,.camera-collage{grid-template-columns:repeat(2,1fr);gap:17px;margin:0;min-height:auto}.year-one-collage .photo-placeholder:nth-child(even){margin-top:14px}.year-two-small-collage{grid-template-columns:repeat(2,1fr)}.central-photo{width:min(280px,75vw)}.changes-note{position:relative;right:auto;top:auto;justify-self:center}.sentimental-note{margin-inline:0}.camera-note-bottom{margin:12px 0 0 27%}.camera-arrows{display:none}.letter-paper{padding:30px 28px 35px 45px}.letter-paper:before{left:30px}.letter-body{font-size:17px;line-height:1.65}.letter-edge-photo,.letter-bow{display:none}.birthday-card{padding-inline:20px}.birthday-card h2{font-size:52px}}
 .ritual-page{background:#fff8ef}.ritual-page .inside-heading{margin-bottom:8px}.ritual-page .inside-heading h1{font-size:clamp(35px,5.5vw,60px);color:var(--rose)}.ritual-page .inside-heading p{max-width:560px;margin:10px auto 0}.ritual-doodles{text-align:center;color:var(--rose);font:26px Caveat,cursive;letter-spacing:.12em}.ritual-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:45px;align-items:start;margin-top:18px}.ritual-sequence{padding:8px 5% 0;text-align:center}.ritual-step{opacity:0;transform:translateY(9px) rotate(-1deg);transition:opacity .3s ease,transform .3s ease}.ritual-step:nth-child(even){transform:translateY(9px) rotate(1.5deg)}.ritual-step.is-visible{opacity:1;transform:translateY(0) rotate(-1deg)}.ritual-step:nth-child(even).is-visible{transform:translateY(0) rotate(1.5deg)}.ritual-step button{position:relative;border:0;padding:12px 28px;width:min(330px,100%);background:#f5d2d0;color:var(--ink);box-shadow:2px 4px 5px rgba(111,57,53,.1);cursor:default;font:27px Caveat,cursive}.ritual-step:first-child button{cursor:pointer}.ritual-step button:disabled{opacity:1}.ritual-step button b{position:absolute;right:13px;color:var(--rose);font:22px Caveat,cursive}.ritual-step i{display:block;height:23px;color:var(--rose);font:24px Caveat,cursive;font-style:normal}.summoning-complete{display:grid;gap:4px;margin-top:22px;padding:17px 15px;background:#efb0b7;box-shadow:3px 5px 0 rgba(184,92,112,.13);opacity:0;transform:scale(.96);transition:opacity .35s ease,transform .35s ease}.summoning-complete.is-visible{opacity:1;transform:scale(1)}.summoning-complete strong{color:var(--rose);font:28px Caveat,cursive}.summoning-complete span{font:17px Caveat,cursive}.summoning-complete b{font:34px Caveat,cursive}.replay-ritual{margin-top:15px;border:0;background:transparent;color:var(--rose);cursor:pointer;text-decoration:underline;font:19px Caveat,cursive}.ritual-evidence{display:grid;grid-template-columns:1fr 1fr;gap:27px 18px;padding-top:3px}.evidence-item{position:relative;transform:rotate(var(--rotation));}.evidence-item .photo-placeholder{width:100%;padding:8px 8px 11px}.evidence-item .photo-surface{min-height:115px;background:#f0c6c7}.evidence-item>span{display:block;margin:5px 0 0 5px;color:var(--rose);font:16px Caveat,cursive}.evidence-item em{display:block;margin-left:5px;color:#86645d;font:16px Caveat,cursive}.ritual-bottom-note{position:relative;width:205px;margin:20px 0 0 5%;padding:16px 18px;background:#f4d7cf;transform:rotate(-3deg);box-shadow:2px 4px 5px rgba(111,57,53,.1)}.ritual-bottom-note span{white-space:pre-line;font:19px/1.1 Caveat,cursive}.ritual-annotation{position:absolute;right:7%;bottom:15%;color:var(--rose);font:20px Caveat,cursive;transform:rotate(5deg)}
+
+/* =========================================================
+   SURPRISE PAGE
+   ========================================================= */
+
+.surprise-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.surprise-card {
+  position: relative;
+  width: min(650px, 90%);
+  padding: 60px 40px;
+  text-align: center;
+  background: #fffaf3;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: rotate(-1deg);
+}
+
+.surprise-doodle {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.surprise-small {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  margin: 0 0 5px;
+}
+
+.surprise-card h1 {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0 0 15px;
+}
+
+.surprise-subtitle {
+  line-height: 1.7;
+  opacity: 0.75;
+}
+
+.surprise-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 35px;
+  min-height: 60px;
+}
+
+.surprise-buttons button,
+.surprise-final-button {
+  border: none;
+  padding: 12px 25px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.surprise-no-button {
+  background: #eee3dc;
+}
+
+.surprise-yes-button {
+  background: #f4b8c5;
+  transition:
+    left 0.15s ease,
+    top 0.15s ease,
+    transform 0.15s ease;
+}
+
+.surprise-attempt {
+  margin-top: 30px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  transform: rotate(-2deg);
+}
+
+
+/* =========================================================
+   SURPRISE FINAL
+   ========================================================= */
+
+.surprise-final {
+  width: min(650px, 90%);
+  padding: 70px 40px;
+  text-align: center;
+  background: #fffaf3;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transform: rotate(1deg);
+}
+
+.surprise-tiny {
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+}
+
+.surprise-final h1 {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(3rem, 7vw, 5rem);
+  margin: 10px 0 20px;
+}
+
+.surprise-final-button {
+  margin-top: 30px;
+  background: #f4b8c5;
+}
+
+
+/* =========================================================
+   HANA LIFE TIMELINE
+   ========================================================= */
+
+.hana-life-page {
+  padding-bottom: 100px;
+}
+
+.hana-life-intro {
+  width: min(600px, 88%);
+  margin: 30px auto 60px;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+}
+
+.hana-life-intro span {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.hana-life-timeline {
+  position: relative;
+  width: min(1000px, 90%);
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+/* The string connecting all the memories */
+
+.hana-life-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-left: 2px dashed rgba(120, 100, 100, 0.25);
+  transform: translateX(-50%);
+}
+
+.hana-life-item {
+  position: relative;
+  width: 45%;
+  margin-bottom: 70px;
+}
+
+.hana-life-item:nth-child(odd) {
+  margin-right: auto;
+}
+
+.hana-life-item:nth-child(even) {
+  margin-left: auto;
+}
+
+.hana-life-marker {
+  position: absolute;
+  top: 15px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fffaf3;
+  border: 2px solid rgba(120, 100, 100, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Caveat', cursive;
+  z-index: 3;
+}
+
+.hana-life-item:nth-child(odd) .hana-life-marker {
+  right: -62px;
+}
+
+.hana-life-item:nth-child(even) .hana-life-marker {
+  left: -62px;
+}
+
+.hana-life-photo {
+  position: relative;
+  z-index: 2;
+}
+
+.hana-life-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  text-align: center;
+  margin: 15px 0 0;
+}
+
+.hana-life-baby .hana-life-caption {
+  transform: rotate(-1deg);
+}
+
+.hana-life-school .hana-life-caption {
+  transform: rotate(1deg);
+}
+
+.hana-life-now .hana-life-caption {
+  transform: rotate(-1deg);
+}
+
+.hana-life-ending {
+  width: min(600px, 90%);
+  margin: 30px auto 80px;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+}
+
+.hana-life-ending strong {
+  display: block;
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .surprise-card {
+    padding: 45px 25px;
+  }
+
+  .surprise-buttons {
+    gap: 15px;
+  }
+
+  .hana-life-timeline::before {
+    left: 20px;
+  }
+
+  .hana-life-item,
+  .hana-life-item:nth-child(odd),
+  .hana-life-item:nth-child(even) {
+    width: calc(100% - 55px);
+    margin-left: 55px;
+    margin-right: 0;
+  }
+
+  .hana-life-marker,
+  .hana-life-item:nth-child(odd) .hana-life-marker,
+  .hana-life-item:nth-child(even) .hana-life-marker {
+    left: -52px;
+    right: auto;
+  }
+
+}
+
+/* =========================================================
+   IMAGE LIGHTBOX
+   ========================================================= */
+
+.photo-placeholder {
+  cursor: zoom-in;
+}
+
+.photo-placeholder-image-wrap {
+  cursor: zoom-in;
+}
+
+.photo-placeholder-image {
+  display: block;
+  max-width: 100%;
+  cursor: zoom-in;
+}
+
+
+/* Full-screen overlay */
+
+.media-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background: rgba(35, 20, 25, 0.88);
+
+  animation: lightboxFadeIn 0.2s ease;
+}
+
+
+/* Large image container */
+
+.media-lightbox-content {
+  position: relative;
+
+  max-width: 92vw;
+  max-height: 92vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  animation: lightboxZoomIn 0.25s ease;
+}
+
+
+/* The actual enlarged image */
+
+.media-lightbox-image {
+  display: block;
+
+  max-width: 92vw;
+  max-height: 82vh;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+
+  border: 8px solid #fffaf3;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35);
+
+  background: #fffaf3;
+}
+
+
+/* Caption below image */
+
+.media-lightbox-caption {
+  margin: 14px 0 0;
+
+  padding: 8px 18px;
+
+  max-width: 80vw;
+
+  background: #fffaf3;
+
+  color: #49383b;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.35rem;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2);
+
+  transform: rotate(-1deg);
+}
+
+
+/* Close button */
+
+.media-lightbox-close {
+  position: fixed;
+
+  top: 22px;
+  right: 28px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #fffaf3;
+  color: #49383b;
+
+  font-size: 2rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 100000;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.media-lightbox-close:hover {
+  transform: rotate(8deg) scale(1.08);
+}
+
+
+/* Animations */
+
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightboxZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) rotate(-1deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .media-lightbox {
+    padding: 20px;
+  }
+
+  .media-lightbox-image {
+    max-width: 94vw;
+    max-height: 78vh;
+
+    border-width: 5px;
+  }
+
+  .media-lightbox-close {
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 1.7rem;
+  }
+
+  .media-lightbox-caption {
+    max-width: 90vw;
+    font-size: 1.15rem;
+  }
+}
+
+/* =========================================================
+   VIDEO CLICK / EXPAND
+   ========================================================= */
+
+.video-moment {
+  position: relative;
+}
+
+.video-moment-preview {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: zoom-in;
+
+  font: inherit;
+}
+
+.video-moment-player {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-width: 100%;
+
+  cursor: zoom-in;
+}
+
+.video-moment-expand {
+  position: absolute;
+
+  right: 12px;
+  top: 12px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 250, 243, 0.92);
+
+  border-radius: 50%;
+
+  font-size: 1.1rem;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.video-moment-caption {
+  margin: 10px 0 0;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.25rem;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   LARGE VIDEO LIGHTBOX
+   ========================================================= */
+
+.media-lightbox-video-content {
+  width: min(94vw, 1200px);
+
+  max-height: 94vh;
+}
+
+.media-lightbox-video {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 94vw;
+  max-height: 82vh;
+
+  background: #000;
+
+  border: 8px solid #fffaf3;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Keep native video controls visible */
+
+.media-lightbox-video::-webkit-media-controls {
+  display: flex !important;
+}
+
+
+/* =========================================================
+   MOBILE VIDEO LIGHTBOX
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .media-lightbox-video-content {
+    width: 96vw;
+  }
+
+  .media-lightbox-video {
+    max-width: 96vw;
+    max-height: 75vh;
+
+    border-width: 5px;
+  }
+
+  .video-moment-expand {
+    right: 8px;
+    top: 8px;
+
+    width: 30px;
+    height: 30px;
+
+    font-size: 0.95rem;
+  }
+}

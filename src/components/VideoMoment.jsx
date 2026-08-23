@@ -1,22 +1,53 @@
 import { useState } from 'react'
-import WashiTape from './WashiTape'
-import '../styles/adaptive-media.css'
+import MediaLightbox from './MediaLightbox'
 
-function VideoMoment({ video, active = false, onSelect }) {
-  const [status, setStatus] = useState('loading')
-  const [dimensions, setDimensions] = useState(null)
-  const ratio = dimensions ? `${dimensions.width} / ${dimensions.height}` : video?.ratio === 'portrait' ? '3 / 4' : video?.ratio === 'landscape' ? '4 / 3' : video?.ratio === 'square' ? '1 / 1' : undefined
+function VideoMoment({ video, className = '' }) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  if (!video) {
+    return null
+  }
 
   return (
-    <figure className={`video-moment media-size-${video?.size || 'auto'} ${dimensions ? 'media-loaded' : ''} ${active ? 'is-active' : ''}`}>
-      <WashiTape />
-      <div className="video-surface" style={ratio ? { aspectRatio: ratio } : undefined}>
-        {status !== 'ready' && <span className="video-placeholder">our little movie<br />goes here ♡<small>▮▮▮ film strip</small></span>}
-        <video className={status === 'ready' ? 'is-loaded' : ''} src={video.src} controls muted playsInline preload="metadata" onLoadedMetadata={(event) => { setDimensions({ width: event.currentTarget.videoWidth, height: event.currentTarget.videoHeight }); setStatus('ready') }} onError={() => setStatus('missing')} aria-label={video.caption} />
-      </div>
-      <figcaption>{video.caption}</figcaption>
-      {onSelect && <button type="button" className="video-select" onClick={onSelect} aria-label={`Show ${video.caption}`}>view film</button>}
-    </figure>
+    <>
+      <article
+        className={`video-moment ${className}`}
+      >
+        <button
+          type="button"
+          className="video-moment-preview"
+          onClick={() => setIsOpen(true)}
+          aria-label={`Play ${video.caption || 'video'} larger`}
+        >
+          <video
+            src={video.src}
+            className="video-moment-player"
+            controls
+            playsInline
+            preload="metadata"
+          />
+
+          <span className="video-moment-expand">
+            ⛶
+          </span>
+        </button>
+
+        {video.caption && (
+          <p className="video-moment-caption">
+            {video.caption}
+          </p>
+        )}
+      </article>
+
+      {isOpen && (
+        <MediaLightbox
+          src={video.src}
+          caption={video.caption}
+          type="video"
+          onClose={() => setIsOpen(false)}
+        />
+      )}
+    </>
   )
 }
 

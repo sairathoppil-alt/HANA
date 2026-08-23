@@ -137,3 +137,76 @@ export const hanaSummoning = {
   ],
   bottomNote: 'Results may vary.\n\nRitual has a 100% success rate so far. ♡'
 }
+
+export const hanaLife = {
+  title: 'Hana through the years',
+  subtitle: 'a tiny timeline of the girl who somehow grew up this fast ♡',
+
+  photos: [
+    {
+      src: '/photos/h1.jpeg',
+      caption: 'tiny Hana has entered the chat ♡',
+      stage: 'baby'
+    },
+    {
+      src: '/photos/h2.jpeg',
+      caption: 'small, cute, and already causing trouble',
+      stage: 'baby'
+    },
+    {
+      src: '/photos/h3.jpeg',
+      caption: 'the tiny human era',
+      stage: 'baby'
+    },
+    {
+      src: '/photos/h4.jpeg',
+      caption: 'and somehow this became the person we know now ♡',
+      stage: 'baby'
+    },
+    {
+      src: '/photos/h5.jpeg',
+      caption: 'school days — the beginning of another chapter',
+      stage: 'school'
+    },
+    {
+      src: '/photos/h6.jpeg',
+      caption: 'growing up, one memory at a time',
+      stage: 'now'
+    },
+    {
+      src: '/photos/h7.jpeg',
+      caption: 'okayyy look at you now ♡',
+      stage: 'now'
+    },
+    {
+      src: '/photos/h8.jpeg',
+      caption: 'somehow getting cooler with time',
+      stage: 'now'
+    },
+    {
+      src: '/photos/h9.jpeg',
+      caption: 'one of my favorite versions of you',
+      stage: 'now'
+    },
+    {
+      src: '/photos/h10.jpeg',
+      caption: 'current Hana: still unmistakably Hana',
+      stage: 'now'
+    },
+    {
+      src: '/photos/h11.jpeg',
+      caption: 'more memories, more chaos ♡',
+      stage: 'now'
+    },
+    {
+      src: '/photos/h12.jpeg',
+      caption: "look how far you've come",
+      stage: 'now'
+    },
+    {
+      src: '/photos/h13.jpeg',
+      caption: 'and somehow, this is only the beginning ♡',
+      stage: 'now'
+    }
+  ]
+}
