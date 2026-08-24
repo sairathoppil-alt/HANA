@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function SurprisePage({ onSurprise }) {
+  const paperRef = useRef(null)
+
   const [position, setPosition] = useState(null)
   const [scale, setScale] = useState(1)
   const [attempts, setAttempts] = useState(0)
@@ -12,24 +14,52 @@ function SurprisePage({ onSurprise }) {
       return
     }
 
-    const padding = 80
+    const paper = paperRef.current
+
+    if (!paper) return
+
+    const paperRect = paper.getBoundingClientRect()
+
+    /*
+      Approximate button dimensions.
+      We leave extra padding so the button never touches
+      or crosses the edge of the scrapbook paper.
+    */
+    const buttonWidth = 130
+    const buttonHeight = 55
+    const padding = 35
+
+    const minX = padding
+    const minY = padding
 
     const maxX = Math.max(
-      padding,
-      window.innerWidth - 180
+      minX,
+      paperRect.width - buttonWidth - padding
     )
 
     const maxY = Math.max(
-      padding,
-      window.innerHeight - 100
+      minY,
+      paperRect.height - buttonHeight - padding
     )
 
+    const x =
+      Math.random() * (maxX - minX) + minX
+
+    const y =
+      Math.random() * (maxY - minY) + minY
+
     setPosition({
-      x: Math.random() * (maxX - padding) + padding,
-      y: Math.random() * (maxY - padding) + padding
+      x,
+      y,
     })
 
-    setScale(Math.max(0.55, 1 - attempts * 0.05))
+    setScale(
+      Math.max(
+        0.55,
+        1 - attempts * 0.05
+      )
+    )
+
     setAttempts((value) => value + 1)
   }
 
@@ -43,10 +73,65 @@ function SurprisePage({ onSurprise }) {
     }
   }, [attempts])
 
+  /*
+    Keep the button inside the scrapbook paper if the
+    browser/window is resized.
+  */
+  useEffect(() => {
+    const keepInsidePaper = () => {
+      if (!position || !paperRef.current) return
+
+      const paperRect =
+        paperRef.current.getBoundingClientRect()
+
+      const buttonWidth = 130
+      const buttonHeight = 55
+      const padding = 35
+
+      const maxX = Math.max(
+        padding,
+        paperRect.width -
+          buttonWidth -
+          padding
+      )
+
+      const maxY = Math.max(
+        padding,
+        paperRect.height -
+          buttonHeight -
+          padding
+      )
+
+      setPosition((current) => ({
+        x: Math.min(
+          Math.max(current.x, padding),
+          maxX
+        ),
+        y: Math.min(
+          Math.max(current.y, padding),
+          maxY
+        ),
+      }))
+    }
+
+    window.addEventListener(
+      'resize',
+      keepInsidePaper
+    )
+
+    return () => {
+      window.removeEventListener(
+        'resize',
+        keepInsidePaper
+      )
+    }
+  }, [position])
+
   if (finished) {
     return (
       <main className="inside-page surprise-page page-enter">
         <div className="surprise-final">
+
           <p className="surprise-tiny">
             okay okay...
           </p>
@@ -66,13 +151,17 @@ function SurprisePage({ onSurprise }) {
           >
             fine → show me
           </button>
+
         </div>
       </main>
     )
   }
 
   return (
-    <main className="inside-page surprise-page page-enter">
+    <main
+      ref={paperRef}
+      className="inside-page surprise-page page-enter"
+    >
       <div className="surprise-card">
 
         <span className="surprise-doodle">
@@ -111,10 +200,11 @@ function SurprisePage({ onSurprise }) {
             style={
               position
                 ? {
-                    position: 'fixed',
+                    position: 'absolute',
                     left: `${position.x}px`,
                     top: `${position.y}px`,
-                    transform: `scale(${scale})`
+                    transform: `scale(${scale})`,
+                    zIndex: 9999,
                   }
                 : undefined
             }

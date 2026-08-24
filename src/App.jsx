@@ -11,6 +11,8 @@ import HanaTimeline from './pages/HanaTimeline'
 import HanaSummoning from './pages/HanaSummoning'
 import Letter from './pages/Letter'
 import BirthdayReveal from './pages/BirthdayReveal'
+import ScrapbookMusic from './components/ScrapbookMusic'
+import BirthdayConfetti from './components/BirthdayConfetti'
 
 import './App.css'
 
@@ -76,6 +78,7 @@ function App() {
 
   return (
     <div className="scrapbook-app">
+      <ScrapbookMusic />
 
       <header className="top-bar">
 
@@ -284,10 +287,14 @@ function App() {
         {/* BIRTHDAY */}
 
         {page === 'birthday' && (
-          <BirthdayReveal
-            onPrevious={() => goTo('letter')}
-          />
-        )}
+  <>
+    <BirthdayConfetti />
+
+    <BirthdayReveal
+      onPrevious={() => goTo('letter')}
+    />
+  </>
+)}
 
       </div>
 
