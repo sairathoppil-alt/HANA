@@ -1,98 +1,62 @@
-import { useEffect, useState } from 'react'
+import { useRef, useState } from 'react'
 
 function SurprisePage({ onSurprise }) {
-  const [position, setPosition] = useState(null)
-  const [scale, setScale] = useState(1)
-  const [attempts, setAttempts] = useState(0)
-  const [finished, setFinished] = useState(false)
+  const areaRef = useRef(null)
+  const [yesPosition, setYesPosition] = useState({
+    x: 0,
+    y: 0,
+  })
 
-  const runAway = () => {
-    if (attempts >= 9) {
-      setFinished(true)
-      return
-    }
+  const [tries, setTries] = useState(0)
 
-    const padding = 80
+  const moveYesButton = () => {
+    const area = areaRef.current
+
+    if (!area) return
+
+    const button = area.querySelector('.surprise-yes-button')
+
+    if (!button) return
+
+    const areaRect = area.getBoundingClientRect()
+    const buttonRect = button.getBoundingClientRect()
+
+    const padding = 20
 
     const maxX = Math.max(
-      padding,
-      window.innerWidth - 180
+      0,
+      areaRect.width - buttonRect.width - padding
     )
 
     const maxY = Math.max(
-      padding,
-      window.innerHeight - 100
+      0,
+      areaRect.height - buttonRect.height - padding
     )
 
-    setPosition({
-      x: Math.random() * (maxX - padding) + padding,
-      y: Math.random() * (maxY - padding) + padding
+    const newX =
+      padding + Math.random() * Math.max(0, maxX - padding)
+
+    const newY =
+      padding + Math.random() * Math.max(0, maxY - padding)
+
+    setYesPosition({
+      x: newX,
+      y: newY,
     })
 
-    setScale(Math.max(0.55, 1 - attempts * 0.05))
-    setAttempts((value) => value + 1)
-  }
-
-  useEffect(() => {
-    if (attempts >= 9) {
-      const timer = setTimeout(() => {
-        setFinished(true)
-      }, 500)
-
-      return () => clearTimeout(timer)
-    }
-  }, [attempts])
-
-  if (finished) {
-    return (
-      <main className="inside-page surprise-page page-enter">
-        <div className="surprise-final">
-          <p className="surprise-tiny">
-            okay okay...
-          </p>
-
-          <h1>
-            fine, i'll show you 🙄
-          </h1>
-
-          <p>
-            you really weren't going to give up, were you?
-          </p>
-
-          <button
-            type="button"
-            className="surprise-final-button"
-            onClick={onSurprise}
-          >
-            fine → show me
-          </button>
-        </div>
-      </main>
-    )
+    setTries((current) => current + 1)
   }
 
   return (
-    <main className="inside-page surprise-page page-enter">
-      <div className="surprise-card">
+    <main className="inside-page surprise-page">
+      <section
+        ref={areaRef}
+        className="surprise-play-area"
+      >
+        <h1>do you want to see a surprise? ♡</h1>
 
-        <span className="surprise-doodle">
-          ✦
-        </span>
-
-        <p className="surprise-small">
-          wait...
-        </p>
-
-        <h1>
-          do you wanna see a surprise?
-        </h1>
-
-        <p className="surprise-subtitle">
-          it's a really good one.
-          <br />
-          probably.
-          <br />
-          maybe.
+        <p>
+          I have something very important to show you...
         </p>
 
         <div className="surprise-buttons">
@@ -100,45 +64,27 @@ function SurprisePage({ onSurprise }) {
           <button
             type="button"
             className="surprise-no-button"
-            onClick={onSurprise}
+            onClick={moveYesButton}
           >
-            no thanks
+            no 😭
           </button>
 
           <button
             type="button"
             className="surprise-yes-button"
-            style={
-              position
-                ? {
-                    position: 'fixed',
-                    left: `${position.x}px`,
-                    top: `${position.y}px`,
-                    transform: `scale(${scale})`
-                  }
-                : undefined
-            }
-            onMouseEnter={runAway}
-            onClick={runAway}
+            style={{
+              left: `${yesPosition.x}px`,
+              top: `${yesPosition.y}px`,
+            }}
+            onMouseEnter={moveYesButton}
+            onClick={onSurprise}
           >
-            YES ♡
+            {tries > 5 ? 'fine, ill show' : 'yes ♡'}
           </button>
 
         </div>
 
-        {attempts > 0 && (
-          <p className="surprise-attempt">
-            {attempts < 3
-              ? 'nice try 😭'
-              : attempts < 6
-                ? 'you really thought it would be that easy'
-                : attempts < 9
-                  ? 'STOP CHASING THE BUTTON 😭'
-                  : 'okay fine...'}
-          </p>
-        )}
-
-      </div>
+      </section>
     </main>
   )
 }
