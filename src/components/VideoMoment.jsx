@@ -10,19 +10,18 @@ function VideoMoment({ video, className = '' }) {
 
   return (
     <>
-      <article
-        className={`video-moment ${className}`}
-      >
+      <article className={`video-moment ${className}`}>
+
         <button
           type="button"
           className="video-moment-preview"
           onClick={() => setIsOpen(true)}
-          aria-label={`Play ${video.caption || 'video'} larger`}
+          aria-label={`Open ${video.caption || 'video'} larger`}
         >
           <video
             src={video.src}
             className="video-moment-player"
-            controls
+            muted
             playsInline
             preload="metadata"
           />
@@ -37,6 +36,7 @@ function VideoMoment({ video, className = '' }) {
             {video.caption}
           </p>
         )}
+
       </article>
 
       {isOpen && (

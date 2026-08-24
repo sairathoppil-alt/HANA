@@ -39,7 +39,7 @@ export const cameraRoll = {
   photos: [
     photo('/photos/cr1.jpeg', '???', -6), photo('/photos/cr2.jpeg', 'HELP', 4, 'square'), photo('/photos/cr3.jpeg', 'girl 😭', 2),
     photo('/photos/cr4.jpeg', 'why', -3, 'landscape'), photo('/photos/cr5.jpeg', 'literally us', 5), photo('/photos/cr6.jpeg', 'this was a good day', -2),
-    photo('/photos/cr7.jpeg', 'core memory', 3, 'strip'), photo('/photos/cr8.jpeg', 'never again', -5), photo('/photos/cr9.jpeg', 'we need to recreate this', 2),
+    photo('/photos/cr7.jpeg', 'core memory', 3, 'strip'), photo('/photos/cr8.jpeg', 'alachu kuthi veenenee', -5), photo('/photos/cr9.jpeg', 'we need to recreate this', 2),
     photo('/photos/cr10.jpeg', 'my favorite idiots ♡', -4), photo('/photos/cr11.jpeg', 'caught in 4k', 6, 'square'), photo('/photos/cr12.jpeg', 'no explanation needed', -2)
   ]
 }
@@ -58,7 +58,9 @@ export const videoMoments = {
     { src: '/video/v2.mp4', caption: 'a memory I wish I could keep forever' },
     { src: '/video/v3.mp4', caption: 'proof that we actually have fun sometimes 😭' },
     { src: '/video/v4.mp4', caption: 'another little moment ♡' },
-    { src: '/video/v5.mp4', caption: 'one I wish I could keep forever' }
+    { src: '/video/v5.mp4', caption: 'one I keep coming back for' },
+    { src: '/video/v6.mp4', caption: 'before' },
+    { src: '/video/v7.mp4', caption: 'after' }
   ]
 }
 

@@ -1,11 +1,6 @@
 import { useEffect } from 'react'
 
-function MediaLightbox({
-  src,
-  caption,
-  type = 'image',
-  onClose
-}) {
+function MediaLightbox({ src, caption, type = 'image', onClose }) {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
@@ -15,44 +10,36 @@ function MediaLightbox({
 
     document.addEventListener('keydown', handleKeyDown)
 
-    const originalOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = originalOverflow
     }
   }, [onClose])
+
+  const handleBackdropClick = (event) => {
+    if (event.target === event.currentTarget) {
+      onClose()
+    }
+  }
 
   return (
     <div
       className="media-lightbox"
+      onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
-      aria-label={
-        type === 'video'
-          ? 'Expanded video'
-          : 'Expanded image'
-      }
-      onClick={onClose}
+      aria-label={caption || 'Expanded media'}
     >
-      <button
-        type="button"
-        className="media-lightbox-close"
-        aria-label="Close"
-        onClick={onClose}
-      >
-        ×
-      </button>
+      <div className="media-lightbox-inner">
 
-      <div
-        className={`media-lightbox-content ${
-          type === 'video'
-            ? 'media-lightbox-video-content'
-            : ''
-        }`}
-        onClick={(event) => event.stopPropagation()}
-      >
+        <button
+          type="button"
+          className="media-lightbox-close"
+          onClick={onClose}
+          aria-label="Close expanded media"
+        >
+          ×
+        </button>
+
         {type === 'video' ? (
           <video
             className="media-lightbox-video"
@@ -64,9 +51,9 @@ function MediaLightbox({
           />
         ) : (
           <img
-            src={src}
-            alt={caption || 'Expanded scrapbook memory'}
             className="media-lightbox-image"
+            src={src}
+            alt={caption || ''}
           />
         )}
 
@@ -75,6 +62,7 @@ function MediaLightbox({
             {caption}
           </p>
         )}
+
       </div>
     </div>
   )

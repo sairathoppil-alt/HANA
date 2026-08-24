@@ -608,3 +608,1533 @@
     font-size: 0.95rem;
   }
 }
+
+/* =========================================================
+   V6 + V7 CLICK / EXPAND FIX
+   ========================================================= */
+
+.video-v6-v7 {
+  position: relative;
+  z-index: 20;
+}
+
+.video-v6-v7 .video-moment {
+  position: relative;
+  z-index: 21;
+}
+
+.video-v6-v7 .video-moment-preview {
+  position: relative;
+  z-index: 22;
+  cursor: zoom-in;
+}
+
+.video-v6-v7 .video-moment-player {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
+
+.video-v6-v7 .video-moment-click-layer {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+  border: 0;
+
+  background: transparent;
+
+  cursor: zoom-in;
+
+  z-index: 30;
+}
+
+.video-v6-v7 .video-moment-expand {
+  pointer-events: none;
+}
+
+/* =========================================================
+   CENTER EXPANDED IMAGE / VIDEO
+   ========================================================= */
+
+.media-lightbox {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  background: rgba(25, 18, 20, 0.82);
+
+  cursor: zoom-out;
+
+  overflow: hidden;
+}
+
+
+/* The actual expanded media container */
+
+.media-lightbox-video-content,
+.media-lightbox-image-content {
+  position: relative;
+
+  width: auto;
+  height: auto;
+
+  max-width: 94vw;
+  max-height: 90vh;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  cursor: default;
+}
+
+
+/* Expanded video */
+
+.media-lightbox-video {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 92vw;
+  max-height: 82vh;
+
+  object-fit: contain;
+
+  margin: 0 auto;
+
+  background: #111;
+
+  border: 6px solid #fffdf8;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Expanded image */
+
+.media-lightbox-image {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 92vw;
+  max-height: 82vh;
+
+  object-fit: contain;
+
+  margin: 0 auto;
+
+  border: 8px solid #fffdf8;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Caption stays centered underneath */
+
+.media-lightbox-caption {
+  width: 100%;
+
+  margin: 14px 0 0;
+
+  padding: 5px 15px;
+
+  box-sizing: border-box;
+
+  color: #fffdf8;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.6rem;
+
+  text-align: center;
+}
+
+
+/* Close button */
+
+.media-lightbox-close {
+  position: absolute;
+
+  top: -18px;
+  right: -18px;
+
+  z-index: 10002;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(80, 55, 55, 0.15);
+  border-radius: 50%;
+
+  background: #fffdf8;
+
+  color: #4f3b3e;
+
+  font-size: 1.8rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .media-lightbox {
+    width: 100vw;
+    height: 100vh;
+
+    padding: 18px;
+  }
+
+  .media-lightbox-video-content,
+  .media-lightbox-image-content {
+    max-width: 96vw;
+    max-height: 88vh;
+  }
+
+  .media-lightbox-video {
+    max-width: 96vw;
+    max-height: 75vh;
+
+    border-width: 5px;
+  }
+
+  .media-lightbox-image {
+    max-width: 96vw;
+    max-height: 78vh;
+
+    border-width: 5px;
+  }
+
+  .media-lightbox-caption {
+    font-size: 1.35rem;
+  }
+
+  .media-lightbox-close {
+    top: -12px;
+    right: -8px;
+
+    width: 36px;
+    height: 36px;
+
+    font-size: 1.5rem;
+  }
+}
+/* =========================================================
+   SCRAPBOOK MEDIA LIGHTBOX
+   Stays inside the scrapbook page
+   ========================================================= */
+
+.media-lightbox {
+  position: absolute !important;
+
+  /* Cover the scrapbook page, NOT the entire browser */
+  inset: 0 !important;
+
+  width: 100% !important;
+  min-height: 100% !important;
+
+  z-index: 5000 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+
+  padding: 40px !important;
+
+  background: rgba(35, 25, 27, 0.78);
+
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+
+  cursor: zoom-out;
+
+  /* IMPORTANT: don't lock the body/page scrolling */
+}
+
+
+/* The centered media wrapper */
+
+.media-lightbox-inner {
+  position: relative !important;
+
+  width: max-content !important;
+  max-width: 94% !important;
+
+  min-height: 0 !important;
+
+  margin: auto !important;
+  padding: 20px !important;
+
+  box-sizing: border-box !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  cursor: default;
+
+  flex-shrink: 0 !important;
+}
+
+
+/* Expanded video */
+
+.media-lightbox-video {
+  display: block !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 82vw !important;
+  max-height: 78vh !important;
+
+  object-fit: contain !important;
+
+  margin: 0 auto !important;
+
+  background: #111;
+
+  border: 6px solid #fffdf8;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Expanded image */
+
+.media-lightbox-image {
+  display: block !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 82vw !important;
+  max-height: 78vh !important;
+
+  object-fit: contain !important;
+
+  margin: 0 auto !important;
+
+  border: 8px solid #fffdf8;
+
+  background: #fffdf8;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Caption */
+
+.media-lightbox-caption {
+  width: 100% !important;
+
+  margin: 14px 0 0 !important;
+
+  padding: 0 10px !important;
+
+  box-sizing: border-box !important;
+
+  color: #fffdf8;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.55rem;
+
+  line-height: 1.2;
+
+  text-align: center;
+}
+
+
+/* Close button */
+
+.media-lightbox-close {
+  position: absolute !important;
+
+  top: -2px !important;
+  right: -2px !important;
+
+  z-index: 10 !important;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 2px solid rgba(80, 55, 55, 0.15);
+  border-radius: 50%;
+
+  background: #fffdf8;
+
+  color: #4f3b3e;
+
+  font-size: 1.7rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.media-lightbox-close:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   Make sure scrapbook containers allow the lightbox
+   to sit over the whole scrapbook page.
+   ========================================================= */
+
+.paper-spread {
+  position: relative;
+}
+
+.inside-page {
+  position: relative;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .media-lightbox {
+    padding: 20px !important;
+  }
+
+  .media-lightbox-inner {
+    max-width: 100% !important;
+
+    padding: 15px !important;
+  }
+
+  .media-lightbox-video {
+    max-width: 88vw !important;
+    max-height: 72vh !important;
+
+    border-width: 5px;
+  }
+
+  .media-lightbox-image {
+    max-width: 88vw !important;
+    max-height: 72vh !important;
+
+    border-width: 5px;
+  }
+
+  .media-lightbox-caption {
+    font-size: 1.35rem;
+  }
+
+  .media-lightbox-close {
+    width: 36px;
+    height: 36px;
+
+    font-size: 1.5rem;
+
+    top: 0;
+    right: 0;
+  }
+}
+/* Expanded media caption */
+.media-lightbox-caption {
+  color: #4f3b3e !important;
+  background: #fffdf8;
+  padding: 6px 18px !important;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   MATCH ALL PHOTO CAPTIONS TO MOMENTS PAGE
+   ========================================================= */
+
+.photo-caption,
+.photo-placeholder-caption,
+.scrap-label,
+.collage-caption,
+.camera-roll-caption,
+.year-one-page .caption,
+.year-two-page .caption,
+.camera-page .caption,
+.birthday-page .caption,
+.timeline-caption,
+.hana-timeline-caption {
+  font-family: 'Caveat', cursive !important;
+  font-weight: 500;
+}
+
+/* =========================================================
+   RESPONSIVE SCRAPBOOK SYSTEM
+   iPhone • Samsung • Android • Tablets • Laptops • Desktop
+   ========================================================= */
+
+/* ---------- Base safety ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+.scrapbook-app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.paper-spread {
+  position: relative;
+  width: min(100%, 1500px);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP NAVIGATION
+   ========================================================= */
+
+.top-bar {
+  width: 100%;
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 2vw, 28px);
+
+  padding:
+    10px
+    clamp(12px, 3vw, 42px);
+
+  flex-wrap: wrap;
+}
+
+.brand {
+  flex-shrink: 0;
+
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+.recipient {
+  flex-shrink: 0;
+
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+}
+
+
+/* Chapter navigation */
+
+.chapter-tabs {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(4px, 0.8vw, 12px);
+
+  min-width: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: thin;
+
+  padding: 4px 0;
+}
+
+.chapter-tabs button {
+  flex: 0 0 auto;
+
+  white-space: nowrap;
+
+  font-size: clamp(0.72rem, 1vw, 0.95rem);
+}
+
+
+/* =========================================================
+   PAGE CONTAINER
+   ========================================================= */
+
+.inside-page {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding-left: clamp(16px, 4vw, 70px);
+  padding-right: clamp(16px, 4vw, 70px);
+
+  overflow: visible !important;
+}
+
+
+/* =========================================================
+   PAGE HEADERS
+   ========================================================= */
+
+.page-header,
+.page-heading {
+  width: 100%;
+  max-width: 100%;
+
+  padding-left: clamp(4px, 1vw, 20px);
+  padding-right: clamp(4px, 1vw, 20px);
+}
+
+.page-header h1,
+.page-heading h1 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 0.95;
+}
+
+.page-header h2,
+.page-heading h2 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+.page-header p,
+.page-heading p {
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+}
+
+
+/* =========================================================
+   GENERAL PHOTO SIZING
+   ========================================================= */
+
+.photo-placeholder,
+.photo-card,
+.photo-collage,
+.video-moment {
+  max-width: 100%;
+}
+
+.photo-placeholder img,
+.photo-card img,
+.photo-collage img,
+.video-moment video {
+  width: 100%;
+  height: auto;
+
+  max-width: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   COLLAGES
+   ========================================================= */
+
+.photo-collage {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+
+  gap: clamp(12px, 2vw, 28px);
+}
+
+
+/* =========================================================
+   COLLEGE PAGES
+   ========================================================= */
+
+.year-two-layout,
+.year-one-layout {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(180px, 0.8fr);
+
+  gap: clamp(20px, 4vw, 60px);
+
+  align-items: start;
+}
+
+.central-photo {
+  min-width: 0;
+}
+
+.year-two-small-collage,
+.year-one-small-collage {
+  min-width: 0;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+.changes-note {
+  min-width: 0;
+
+  max-width: 100%;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   CAMERA ROLL
+   ========================================================= */
+
+.camera-roll,
+.camera-page {
+  width: 100%;
+}
+
+.camera-roll-grid,
+.camera-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(190px, 100%), 1fr));
+
+  gap: clamp(14px, 2.5vw, 32px);
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   MOMENTS / VIDEO PAGE
+   ========================================================= */
+
+.video-moments,
+.moments-page {
+  width: 100%;
+}
+
+.video-moment {
+  min-width: 0;
+}
+
+.video-moment-preview {
+  width: 100%;
+  max-width: 100%;
+
+  overflow: hidden;
+}
+
+.video-moment-player {
+  width: 100%;
+  height: auto;
+
+  max-height: 70vh;
+
+  object-fit: cover;
+}
+
+
+/* V1 at top */
+
+.video-moments > .video-moment:first-child {
+  width: min(100%, 900px);
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* V2-V5 row */
+
+.video-grid,
+.video-moments-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: clamp(12px, 2vw, 28px);
+}
+
+
+/* V6-V7 row */
+
+.video-v6-v7 {
+  width: min(100%, 900px);
+
+  margin: clamp(25px, 4vw, 50px) auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: clamp(14px, 3vw, 30px);
+}
+
+
+/* =========================================================
+   VIDEO CAPTIONS
+   ========================================================= */
+
+.video-moment-caption {
+  font-family: 'Caveat', cursive !important;
+
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+
+  line-height: 1.15;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   GENERAL SCRAPBOOK TEXT
+   ========================================================= */
+
+.inside-page p {
+  overflow-wrap: anywhere;
+}
+
+.scrap-label {
+  font-size: clamp(1rem, 1.5vw, 1.35rem);
+}
+
+.sentimental-note {
+  width: min(100%, 800px);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+}
+
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+.media-lightbox {
+  position: absolute !important;
+
+  inset: 0 !important;
+
+  width: 100% !important;
+  min-height: 100% !important;
+
+  padding: clamp(15px, 4vw, 50px) !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+
+  z-index: 5000 !important;
+}
+
+.media-lightbox-inner {
+  width: auto !important;
+  max-width: 96% !important;
+
+  margin: auto !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex-direction: column !important;
+}
+
+.media-lightbox-video,
+.media-lightbox-image {
+  width: auto !important;
+  height: auto !important;
+
+  max-width: min(90vw, 1100px) !important;
+  max-height: 78vh !important;
+
+  object-fit: contain !important;
+}
+
+.media-lightbox-caption {
+  max-width: 90vw;
+
+  font-size: clamp(1.25rem, 2vw, 1.7rem) !important;
+
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   LARGE TABLETS / SMALL LAPTOPS
+   ~ 1024px
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .top-bar {
+    align-items: center;
+  }
+
+  .recipient {
+    display: none;
+  }
+
+  .chapter-tabs {
+    justify-content: flex-start;
+  }
+
+  .year-two-layout,
+  .year-one-layout {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(180px, 0.7fr);
+  }
+
+  .video-grid,
+  .video-moments-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   TABLETS
+   iPad / Galaxy Tab / Surface
+   ~ 768px
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .top-bar {
+    min-height: auto;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .brand {
+    order: 1;
+  }
+
+  .chapter-tabs {
+    order: 3;
+
+    flex-basis: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .year-two-layout,
+  .year-one-layout {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .changes-note {
+    width: min(100%, 600px);
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .photo-collage {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .camera-roll-grid,
+  .camera-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .video-grid,
+  .video-moments-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .video-v6-v7 {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   PHONES
+   iPhone / Samsung / Pixel / Android
+   ~ 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .top-bar {
+    gap: 8px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .brand {
+    font-size: 1.25rem;
+  }
+
+  .chapter-tabs {
+    gap: 3px;
+
+    padding-bottom: 5px;
+  }
+
+  .chapter-tabs button {
+    font-size: 0.72rem;
+
+    padding: 6px 8px;
+  }
+
+  .inside-page {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .page-header h1,
+  .page-heading h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .photo-collage {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-roll-grid,
+  .camera-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* V1 */
+
+  .video-moments > .video-moment:first-child {
+    width: 100%;
+  }
+
+  /* V2-V5 */
+
+  .video-grid,
+  .video-moments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* V6-V7 */
+
+  .video-v6-v7 {
+    grid-template-columns: 1fr;
+
+    width: 100%;
+  }
+
+  .video-moment-caption {
+    font-size: 1.35rem;
+  }
+
+  .sentimental-note {
+    font-size: 1.1rem;
+  }
+
+  .media-lightbox {
+    padding: 12px !important;
+  }
+
+  .media-lightbox-inner {
+    max-width: 100% !important;
+
+    padding: 8px !important;
+  }
+
+  .media-lightbox-video,
+  .media-lightbox-image {
+    max-width: 94vw !important;
+
+    max-height: 72vh !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   iPhone SE / small Android
+   ~ 380px
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .brand {
+    font-size: 1.1rem;
+  }
+
+  .chapter-tabs button {
+    font-size: 0.65rem;
+
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .inside-page {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .video-moment-caption {
+    font-size: 1.2rem;
+  }
+
+  .media-lightbox-video,
+  .media-lightbox-image {
+    max-width: 96vw !important;
+
+    max-height: 68vh !important;
+  }
+}
+
+
+/* =========================================================
+   SHORT SCREENS
+   Prevent tall media from overflowing
+   ========================================================= */
+
+@media (max-height: 700px) {
+
+  .media-lightbox-video,
+  .media-lightbox-image {
+    max-height: 68vh !important;
+  }
+
+  .media-lightbox {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+   ========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .media-lightbox-video,
+  .media-lightbox-image {
+    max-height: 80vh !important;
+    max-width: 82vw !important;
+  }
+
+  .top-bar {
+    min-height: auto;
+  }
+}
+
+
+/* =========================================================
+   VERY LARGE DESKTOPS
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+  .paper-spread {
+    max-width: 1500px;
+  }
+
+  .inside-page {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .media-lightbox-video,
+  .media-lightbox-image {
+    max-width: 1100px !important;
+  }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   Make buttons comfortable to tap
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  button {
+    min-height: 40px;
+  }
+
+  .video-moment-expand {
+    opacity: 1 !important;
+  }
+
+  .chapter-tabs {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   CUTE STICKY NOTE — HANA SUMMONING
+   ========================================================= */
+
+.ritual-sticky-notes {
+  width: min(100%, 620px);
+  margin: 45px auto 35px;
+  padding: 25px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+}
+
+
+/* The actual sticky note */
+
+.ritual-sticky-note {
+  position: relative;
+
+  width: min(100%, 390px);
+  min-height: 245px;
+
+  padding: 42px 35px 32px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff5a8 0%,
+      #ffef91 100%
+    );
+
+  color: #59484a;
+
+  font-family: 'Caveat', cursive;
+
+  text-align: center;
+
+  box-shadow:
+    4px 7px 0 rgba(110, 82, 65, 0.08),
+    0 10px 20px rgba(70, 45, 45, 0.13);
+
+  transform: rotate(-2deg);
+
+  border-radius: 2px 3px 4px 2px;
+
+  z-index: 2;
+}
+
+
+/* Slight imperfect sticky-note edge */
+
+.ritual-sticky-note::after {
+  content: '';
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 28px;
+  height: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 49%,
+      rgba(170, 140, 80, 0.15) 50%,
+      rgba(170, 140, 80, 0.08) 100%
+    );
+
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+
+  pointer-events: none;
+}
+
+
+/* Tape */
+
+.ritual-sticky-note::before {
+  content: '';
+
+  position: absolute;
+
+  top: -13px;
+  left: 50%;
+
+  width: 92px;
+  height: 27px;
+
+  transform: translateX(-50%) rotate(-2deg);
+
+  background: rgba(244, 208, 178, 0.72);
+
+  box-shadow:
+    0 2px 4px rgba(70, 45, 45, 0.08);
+
+  z-index: 5;
+}
+
+
+/* Cute heart / flower */
+
+.sticky-doodle {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 2.3rem;
+
+  line-height: 1;
+
+  transform: rotate(-5deg);
+}
+
+
+/* Heading */
+
+.ritual-sticky-note strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.9rem;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* Main message */
+
+.ritual-sticky-note p {
+  margin: 10px 0 12px;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.55rem;
+
+  line-height: 1.15;
+}
+
+
+/* Little handwritten footer */
+
+.ritual-sticky-note small {
+  display: block;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.15rem;
+
+  line-height: 1.1;
+
+  opacity: 0.75;
+}
+
+
+/* Tiny doodles around the note */
+
+.ritual-sticky-notes::before {
+  content: '♡  ✦  ʚɞ  ✿';
+
+  position: absolute;
+
+  top: -12px;
+  left: 5%;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.4rem;
+
+  letter-spacing: 8px;
+
+  transform: rotate(-8deg);
+
+  opacity: 0.7;
+
+  z-index: 1;
+}
+
+.ritual-sticky-notes::after {
+  content: '✦  ♡  ✧';
+
+  position: absolute;
+
+  right: 4%;
+  bottom: -5px;
+
+  font-family: 'Caveat', cursive;
+
+  font-size: 1.4rem;
+
+  letter-spacing: 7px;
+
+  transform: rotate(8deg);
+
+  opacity: 0.65;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+  .ritual-sticky-notes {
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding:
+      25px
+      12px
+      35px;
+  }
+
+  .ritual-sticky-note {
+    width: min(100%, 340px);
+
+    min-height: 225px;
+
+    padding:
+      38px
+      25px
+      30px;
+  }
+
+  .ritual-sticky-note strong {
+    font-size: 1.7rem;
+  }
+
+  .ritual-sticky-note p {
+    font-size: 1.4rem;
+  }
+
+  .ritual-sticky-note small {
+    font-size: 1.05rem;
+  }
+}
